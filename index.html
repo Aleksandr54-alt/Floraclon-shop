@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Каталог растений</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #f5f5f0; margin: 0; padding: 12px; }
+  h2 { color: #2d5a27; margin: 8px 4px 12px; }
+  .card { background: #fff; border-radius: 14px; padding: 14px; margin-bottom: 12px;
+          box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .name { font-size: 18px; font-weight: bold; color: #222; }
+  .price { color: #2d5a27; font-weight: bold; margin: 4px 0; }
+  .desc { color: #666; font-size: 14px; margin: 4px 0 10px; }
+  button { background: #2d5a27; color: #fff; border: none; border-radius: 10px;
+           padding: 10px 18px; font-size: 15px; width: 100%; }
+  .note { text-align: center; color: #888; font-size: 13px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h2>🌿 Наши растения</h2>
+
+<div class="card">
+  <img src="alocasia_dragon.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Алоказия Драгон Скейл</div>
+  <div class="price">819 ₽</div>
+  <div class="desc">Фактурные «чешуйчатые» листья. Яркий рассеянный свет, полив после просыхания.</div>
+  <button onclick="order('Алоказия Драгон Скейл — 819 ₽')">Заказать</button>
+</div>
+
+<div class="card">
+  <img src="alocasia_nobilis.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Алоказия Нобилис Альба Пинк (клон)</div>
+  <div class="price">675 ₽</div>
+  <div class="desc">Розовая вариегатность на свету. Тёплое место, высокая влажность.</div>
+  <button onclick="order('Алоказия Нобилис Альба Пинк — 675 ₽')">Заказать</button>
+</div>
+
+<div class="card">
+  <img src="aglaonema.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Аглаонема Жемчужная Мелодия</div>
+  <div class="price">1 450 ₽</div>
+  <div class="desc">Необычное серебристо-зелёное окрашивание. Теневынослива, полив умеренный.</div>
+  <button onclick="order('Аглаонема Жемчужная Мелодия — 1450 ₽')">Заказать</button>
+</div>
+
+<div class="card">
+  <img src="philodendron_billitae.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Филодендрон Биллите вариегатный</div>
+  <div class="price">1 700 ₽</div>
+  <div class="desc">Яркая жёлтая вариегация. Яркий свет без прямого солнца, подкормка летом.</div>
+  <button onclick="order('Филодендрон Биллите вариегатный — 1700 ₽')">Заказать</button>
+</div>
+
+<div class="card">
+  <img src="alocasia_melo.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Алоказия Мело Альба</div>
+  <div class="price">2 500 ₽</div>
+  <div class="desc">Бархатные серебристые листья. Тёпло, влажно, без сквозняков.</div>
+  <button onclick="order('Алоказия Мело Альба — 2500 ₽')">Заказать</button>
+</div>
+
+<div class="card">
+  <img src="monstera.jpg" style="width:100%; border-radius:10px;">
+  <div class="name">Монстера Бульбазавр</div>
+  <div class="price">1 100 ₽</div>
+  <div class="desc">Редкая форма с необычными листьями. Рассеянный свет, опора для стебля.</div>
+  <button onclick="order('Монстера Бульбазавр — 1100 ₽')">Заказать</button>
+</div>
+
+<div class="note">🚚 Доставка по городу от 5000 ₽ — бесплатно<br>
+По стране — Почта России, СДЭК<br>
+❓ Вопросы — кнопка «Продавец» в боте</div>
+
+<script>
+  const tg = window.Telegram.WebApp;
+  tg.expand();
+  function order(item) {
+    tg.sendData(item);
+  }
+</script>
+</body>
+</html>
